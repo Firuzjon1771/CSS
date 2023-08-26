@@ -1,19 +1,17 @@
-const exploreButton = document.getElementById('explore-button');
-const modal = document.getElementById('modal');
-const modalImage = document.getElementById('modal-image');
-const closeButton = document.getElementById('close-button');
+const showImageBtn = document.getElementById('showImageBtn');
+const imageModal = document.getElementById('imageModal');
+const popupImage = document.getElementById('popupImage');
+const closeButton = document.getElementById('closeButton');
 
-exploreButton.addEventListener('click', () => {
-    modalImage.src = 'yoda.png'; // Replace with the actual path to your photo
-    modal.classList.add('show');
+showImageBtn.addEventListener('click', () => {
+    imageModal.style.display = 'flex';
+    popupImage.src = '8.gif'; // Replace with the actual path to your image
 });
 
 closeButton.addEventListener('click', () => {
-    modal.classList.remove('show');
+    imageModal.style.display = 'none';
 });
 
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.classList.remove('show');
-    }
+popupImage.addEventListener('click', () => {
+    imageModal.style.display = 'none';
 });
