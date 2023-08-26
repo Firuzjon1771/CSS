@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Travel CSS Showcase</title>
 </head>
-    <body>
-        <header>
-            <h1>Travel Adventures</h1>
-            <p>Embark on a journey to discover breathtaking destinations.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon">🌐</a>
-                <a href="#" class="social-icon">📷</a>
-                <a href="#" class="social-icon">✈️</a>
+<body>
+    <div class="container">
+        <button class="interactive-button scale">Scale Button</button>
+        <button class="interactive-button color">Color Button</button>
+        <input type="range" class="interactive-slider">
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>Champ 1</h2>
+        </section>
+        <section class="section">
+            <h2>Champ 2</h2>
+        </section>
+        <label class="custom-checkbox">
+            Check the champ
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    You ARE
+                </div>
+                <div class="card-back">
+                    THE BEST!
+                </div>
             </div>
-        </header>
-        <main>
-            <section class="content">
-                <h2>Explore the World with Us</h2>
-                <p>Embark on a journey to discover breathtaking destinations.</p>
-                <button id="explore-button" class="explore-button">Explore Now</button>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2023 Travel Adventures</p>
-        </footer>
-        <div id="modal" class="modal">
-            <span class="close-button" id="close-button">&times;</span>
-            <img id="modal-image" src="#" alt="Destination Photo">
         </div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <div class="container">
+        <button class="custom-cursor-button">Custom Cursor Button</button>
+        <a href="#" class="custom-cursor-link">Custom Cursor Link</a>
+        <div class="custom-cursor-area">
+            Hover over this area to change cursor
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="interactive-button" id="showImageBtn">wanna fly?
+        </button>
+        <div class="image-modal" id="imageModal">
+            <span class="close-button" id="closeButton">&times;</span>
+            <img src="#" alt="Popup Image" id="popupImage">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

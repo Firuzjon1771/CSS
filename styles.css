@@ -1,249 +1,189 @@
-/* Reset and General Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Header */
-header {
-    background-image: url('header-bg.jpg');
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 5rem 0;
-}
-
-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-/* Main Content */
-main {
+.container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 80vh;
-    background-color: #f4f4f4;
+    justify-content: center;
+    height: 100vh;
 }
 
-.content {
-    text-align: center;
-    padding: 3rem;
+
+/*Interactive buttons with fading and scaling animations */
+.interactive-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.interactive-button.scale:hover {
+    transform: scale(1.1);
 }
 
-.explore-button {
-    display: inline-block;
+.interactive-button.color {
     background-color: #3498db;
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.explore-button:hover {
+.interactive-button.color:hover {
     background-color: #2980b9;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+.interactive-slider {
+    width: 80%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: margin-left 0.3s ease;
 }
 
-/* Header */
-header {
-    background-image: url('header-bg.jpg');
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 0;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
+.interactive-slider:hover {
+    margin-left: 10%;
+}
+
+/* checkbox*/
+
+.section {
+    position: relative;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #3498db;
+}
+
+.custom-checkbox {
+    display: inline-flex;
     align-items: center;
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 1s ease forwards; /* Fade-in animation */
+    cursor: pointer;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.custom-checkbox input {
+    opacity: 0;
+    position: absolute;
 }
 
-/* Main Content */
-main {
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox input:checked ~ .checkmark::before {
+    content: "✓";
+    font-size: 14px;
+}
+
+
+/*3D card flip animation*/
+
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    background-color: #f4f4f4;
-    opacity: 0; /* Initially hidden */
-    animation: slideIn 1s ease 0.5s forwards; /* Slide-in animation */
+    font-size: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
 }
 
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 0;
-    height: 150px;
-    background-color: #333;
-    color: white;
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 1s ease 1s forwards; /* Fade-in animation with delay */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #333;
+.card-back {
+    transform: rotateY(180deg);
+    background-color: #3498db;
     color: white;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
+
+/*Cursor button*/
+.custom-cursor-button, .custom-cursor-link {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
 }
 
-/* Header */
-header {
-    background-image: url('header-bg.jpg');
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    height: 250px;
+.custom-cursor-link {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+.custom-cursor-link:hover {
+    color: #2980b9;
+}
+
+.custom-cursor-area {
+    width: 200px;
+    height: 100px;
+    background-color: #ccc;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
+    cursor: pointer;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    opacity: 0;
-    animation: slideIn 1s ease 0.5s forwards;
+.custom-cursor-area:hover {
+    cursor: url('custom-cursor.png'), auto;
 }
 
-.explore-button {
-    /* ... (previous button styles) ... */
-    margin-bottom: 1rem;
-}
-
-.photo-container {
-    display: none;
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-#destination-photo {
-    max-width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.photo-container.show {
-    display: block;
-}
-
-#destination-photo.show {
-    opacity: 1;
-    animation: fadeIn 1s ease 0.5s forwards;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    height: 250px;
-    background-color: #333;
+/*click me button */
+.interactive-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #3498db;
     color: white;
-    opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
-}
-@media screen and (max-width: 480px) {
-    header {
-        height: 180px;
-    }
-    
-    main {
-        padding: 1rem;
-    }
-    
-    footer {
-        height: 180px;
-    }
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: auto;
+.interactive-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.social-icon {
-    color: white;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
+.interactive-button:active {
+    transform: scale(0.95);
+    box-shadow: none;
 }
-
-.social-icon:hover {
-    transform: scale(1.2);
-}
-
-@media screen and (max-width: 480px) {
-    header {
-        height: auto;
-    }
-    
-    main {
-        padding: 1rem;
-    }
-    
-    footer {
-        height: auto;
-    }
-    
-    .social-icons {
-        visibility: visible;
-        margin-top: 1rem;
-    }
-    
-    .social-icon {
-        font-size: 1.2rem;
-    }
-}
-/* Modal */
-.modal {
+.image-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -256,11 +196,7 @@ footer {
     z-index: 1000;
 }
 
-.modal.show {
-    display: flex;
-}
-
-#modal-image {
+#popupImage {
     max-width: 90%;
     max-height: 90%;
 }
@@ -274,33 +210,3 @@ footer {
     cursor: pointer;
 }
 
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-}
-
-/* Header */
-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('header-bg.jpg');
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    height: 250px;
-    background: var(--primary-color);
-    color: white;
-    opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
-}
