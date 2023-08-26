@@ -4,7 +4,7 @@ const modalImage = document.getElementById('modal-image');
 const closeButton = document.getElementById('close-button');
 
 exploreButton.addEventListener('click', () => {
-    modalImage.src = 'yoda.png'; // Replace with the actual path to your photo
+    modalImage.src = 'yoda.png';
     modal.classList.add('show');
 });
 
