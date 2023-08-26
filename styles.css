@@ -9,15 +9,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Header */
-header {
-    background-image: url('header-bg.jpg');
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 5rem 0;
-}
-
 header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -54,14 +45,6 @@ main {
 
 .explore-button:hover {
     background-color: #2980b9;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
 }
 
 /* Header */
@@ -112,14 +95,6 @@ footer {
     color: white;
     opacity: 0; /* Initially hidden */
     animation: fadeIn 1s ease 1s forwards; /* Fade-in animation with delay */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #333;
-    color: white;
 }
 
 /* Responsive Design */
@@ -178,17 +153,6 @@ main {
 #destination-photo.show {
     opacity: 1;
     animation: fadeIn 1s ease 0.5s forwards;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    height: 250px;
-    background-color: #333;
-    color: white;
-    opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
 }
 @media screen and (max-width: 480px) {
     header {
